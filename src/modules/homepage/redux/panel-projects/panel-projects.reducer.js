@@ -26,7 +26,7 @@ const crud_form_project_reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: false,
-        items: { ...state.items }, 
+        items: null, 
       }; 
 
     default:

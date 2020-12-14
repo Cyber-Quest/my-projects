@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react"; 
+import { Empty } from 'antd';
 
 import {
     BodyStyles,
@@ -8,7 +9,7 @@ import {
 
 const Body = ({
     getProjects = () => null,
-    projects = {}
+    projects
 }) =>{   
     const [state, setState] = useState({
         data: [],
@@ -33,12 +34,18 @@ const Body = ({
                     <h1>my most recent projects</h1> 
                     <p>See all objects created over time</p> 
                     <div style={{display:"flex", flexWrap:"wrap", alignItems:"center", justifyContent:"center", maxWidth:"900px", width:"100%", gap:"30px", marginTop:"30px"}}> 
-                    {!projects.loading ? state.data.map((item) =>{
-                        return <Project image={item.link} href={`https://${item.name}.netlify.app`} target="_blank">
-                            <div/>
-                            <h2>{item.title}</h2>
-                        </Project>
-                    }): null}
+                    {!projects.loading  ? 
+                        projects.data != null ?
+                            state.data.map((item) =>{
+                            return (
+                            <Project image={item.link} href={`https://${item.name}.netlify.app`} target="_blank">
+                                <div/>
+                                <h2>{item.title}</h2>
+                            </Project>)
+                            })
+                        :
+                        <Empty/>
+                    : null}
                         
                     </div>
                 </div>
