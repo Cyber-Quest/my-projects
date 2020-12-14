@@ -24,9 +24,7 @@ const Body = ({
 
     useEffect(() => {
         if (!projects.loading) setState({ data: projects.items })  
-    }, [setState, projects]);
-
-    console.log(state)
+    }, [setState, projects]); 
     return(
         <BodyStyles>
             <Container>
