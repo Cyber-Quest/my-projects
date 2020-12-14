@@ -1,5 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
-import imgUrl from "../../assests/background.jpg";
+import React, { useState, useCallback, useEffect } from "react"; 
 
 import {
     BodyStyles,
@@ -24,12 +23,10 @@ const Body = ({
     }, [getProjectsCallback]);
 
     useEffect(() => {
-        if (!projects.loading) {setState({ data: projects.items })
-            console.log("STATW", projects)
-        };
-        console.log(state)
-    }, [setState, projects, state]);
+        if (!projects.loading) setState({ data: projects.items })  
+    }, [setState, projects]);
 
+    console.log(state)
     return(
         <BodyStyles>
             <Container>
@@ -37,38 +34,12 @@ const Body = ({
                     <h1>my most recent projects</h1> 
                     <p>See all objects created over time</p> 
                     <div style={{display:"flex", flexWrap:"wrap", alignItems:"center", justifyContent:"center", maxWidth:"900px", width:"100%", gap:"30px", marginTop:"30px"}}> 
-                        <Project image={imgUrl} href="https://google.com">
+                    {!projects.loading ? state.data.map((item) =>{
+                        return <Project image={item.link} href={`https://${item.name}.netlify.app`} target="_blank">
                             <div/>
-                            <h2>Our test</h2>
+                            <h2>{item.title}</h2>
                         </Project>
-                         <Project image={imgUrl}>
-                            <div/>
-                            <h2>Our test</h2>
-                        </Project>
-                         <Project image={imgUrl}>
-                            <div/>
-                            <h2>Our test</h2>
-                        </Project>
-                         <Project image={imgUrl}>
-                            <div/>
-                            <h2>Our test</h2>
-                        </Project>
-                         <Project image={imgUrl}>
-                            <div/>
-                            <h2>Our test</h2>
-                        </Project>
-                         <Project image={imgUrl}>
-                            <div/>
-                            <h2>Our test</h2>
-                        </Project>
-                         <Project image={imgUrl}>
-                            <div/>
-                            <h2>Our test</h2>
-                        </Project>
-                         <Project image={imgUrl}>
-                            <div/>
-                            <h2>Our test</h2>
-                        </Project>
+                    }): null}
                         
                     </div>
                 </div>
