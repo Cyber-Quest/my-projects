@@ -11,6 +11,9 @@ if (process.env.NODE_ENV === "development") {
   baseURL = process.env.REACT_APP_API_URL
 }
 
+alert(process.env.NODE_ENV);
+alert (process.env.REACT_APP_API_URL)
+
 const Api = axios.create({
   baseURL,
   headers: { "content-type": "application/json", 'Access-Control-Allow-Origin': '*' },
