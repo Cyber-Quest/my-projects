@@ -25,6 +25,7 @@ const Body = ({
     useEffect(() => {
         if (!projects.loading) setState({ data: projects.items })  
     }, [setState, projects]); 
+    
     return(
         <BodyStyles>
             <Container>
