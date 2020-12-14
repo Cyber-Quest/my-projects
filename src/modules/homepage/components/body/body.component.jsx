@@ -27,7 +27,8 @@ const Body = ({
         if (!projects.loading) {setState({ data: projects.items })
             console.log("STATW", projects)
         };
-    }, [setState, projects]);
+        console.log(state)
+    }, [setState, projects, state]);
 
     return(
         <BodyStyles>
