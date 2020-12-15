@@ -36,7 +36,7 @@ export const Project = styled.a`
     gap:20px; 
     div{
         background:linear-gradient(to top, rgba(128, 128, 128, .6), rgba(51, 51, 51, .6)),${({ image }) => `url(${image})`}; 
-        background-size: cover;
+        background-size: cover ;
         background-repeat: no-repeat; 
         width:180px;
         height:180px; 

@@ -72,5 +72,6 @@ export const SocialNetworks = styled.div`
  @media only screen and (max-width: 800px) { 
     justify-content:center;
     margin-top:10px; 
+    margin-left:0px;
  }
 `
