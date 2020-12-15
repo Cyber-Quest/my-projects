@@ -13,8 +13,7 @@ const Body = ({
 }) =>{   
     const [state, setState] = useState({
         data: [],
-    });
-    
+    }); 
     const getProjectsCallback = useCallback(() => {
         getProjects();
     }, [getProjects]);
@@ -35,13 +34,13 @@ const Body = ({
                     <p>See all objects created over time</p> 
                     <div style={{display:"flex", flexWrap:"wrap", alignItems:"center", justifyContent:"center", maxWidth:"900px", width:"100%", gap:"30px", marginTop:"30px"}}> 
                     {!projects.loading  ? 
-                        projects.items != null ?
+                        state.data.length > 0 ?
                             state.data.map((item, index) =>{
-                            return (
-                            <Project key={`${index}`} image={item.link} href={`https://${item.name}.netlify.app`} target="_blank">
-                                <div/>
-                                <h2>{item.title}</h2>
-                            </Project>)
+                                return (
+                                <Project key={`${index}`} image={item.link} href={`https://${item.name}.netlify.app`} target="_blank">
+                                    <div/>
+                                    <h2>{item.title}</h2>
+                                </Project>)
                             })
                         :
                         <Empty/>
