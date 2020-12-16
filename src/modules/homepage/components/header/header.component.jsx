@@ -1,4 +1,5 @@
 import React, { useState } from "react";  
+import { Anchor } from 'antd';
 import imgUrl from "../../assests/background.jpg";
  
 import LoginModal from "../login/login.container";
@@ -13,6 +14,9 @@ import {
   NavbarItem,
   ContentHeader
 } from "./header.styles";
+
+
+const { Link } = Anchor;
 
 const Header = ({
   logoutUser = () => null,
@@ -52,7 +56,10 @@ const Header = ({
     <ContentHeader>
       <h1>WELCOME TO MY PROJECTS</h1>
       <p>Click to view</p>
-      <Button btntype="primary">View projects</Button>
+      <Anchor affix={false}>
+        <Link href="#projects" title={<Button btntype="primary">View projects</Button>} />
+            
+      </Anchor>
     </ContentHeader>
   </HeaderStyles>
   );

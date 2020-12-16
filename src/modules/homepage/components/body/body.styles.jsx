@@ -12,11 +12,13 @@ export const BodyStyles = styled.div`
 export const Container = styled.div` 
     display:flex;
     justify-content:center;  
-    max-width:1024px;
-    width:100%; 
-    margin-top:50px;
-    color:#333333 !important;
+    flex-direction:column; 
     text-align:center;
+    color:#333333 !important;
+    max-width:700px;
+    width:100%;  
+    height:auto;
+    margin-top:50px;
     div:nth-child(1){
         h1:nth-child(1){ 
             text-transform:capitalize; 
@@ -41,6 +43,7 @@ export const Project = styled.a`
         width:180px;
         height:180px; 
         border-radius:50%;
+        margin:auto;
         &:hover{
             background-image: ${(props) => `url(${props.image})`} !important ;
         }
