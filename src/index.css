@@ -61,4 +61,25 @@ h3{
 
 .ant-anchor-link-title-active{
    color:white !important;
-} 
+}  
+
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+  background-color: #262626 !important;
+  border: none !important;
+  color:white !important;
+}
+
+.ant-pagination-item { 
+  background-color: #262626 !important;
+  border: none !important;
+  color:white !important;
+}
+
+.ant-pagination-item:hover {
+  opacity: 0.6;
+}
+
+.ant-pagination-prev:hover .ant-pagination-item-link:hover, .ant-pagination-next:hover .ant-pagination-item-link:hover {
+  opacity: 0.6;
+}
+ 
