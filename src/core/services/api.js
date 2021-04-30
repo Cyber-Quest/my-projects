@@ -21,7 +21,7 @@ Api.interceptors.request.use(function (config) {
     localStorage.getItem("login_token")
   ); 
 
-  config.headers["x-access-token"] = user_token;
+  config.headers.Authorization = user_token;
   return config;
 });
 
