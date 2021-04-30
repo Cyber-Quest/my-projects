@@ -6,7 +6,7 @@ require('dotenv').config()
 let baseURL = "";
 
 if (process.env.NODE_ENV === "development") { 
-  baseURL = "https://cxbsy6gtk7.execute-api.sa-east-1.amazonaws.com/dev/"
+  baseURL = /*"http://localhost:3000/dev/"*/ "https://bfxsvmj8u7.execute-api.sa-east-1.amazonaws.com/dev/"
 } else {  
   baseURL = process.env.REACT_APP_API_URL
 }
